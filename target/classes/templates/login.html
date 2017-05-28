@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head lang="en" th:replace="fragments/header :: header"> </head>
+
+<body>
+<!-- <div lang="en" th:replace="fragments/nav :: nav"> </div> -->
+
+	<!-- this code for loader -->
+		<div class="se-pre-con"></div>
+	<!-- Ends -->
+	
+	<div class="container">
+		<div class="row" >
+			<div class="col-md-12" style="margin-top: 10%"></div>
+			<div class="col-md-4 col-md-offset-5" id="pic">
+                  <img th:src="@{/images/login.jpg}" height="200" alt="admin pic" class="img-responsive img-circle"/>
+             </div>
+             <div class="col-md-4 col-md-offset-4" style="margin-top: 1%">
+                    <form th:action="@{/login}" method="POST">
+                        <div class="form-group has-feedback has-success">
+                            <input type="text" name="email" class="form-control" th:placeholder="Email"/>
+                                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                        </div> 
+                        
+                        <div class="form-group has-feedback has-success">
+                            <input type="password" name="password" class="form-control" th:placeholder="Password"/>
+                                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                        </div> 
+                        
+                        <div align="center" th:if="${param.error}">
+							<p style="font-size: 20; color: #FF1C19;">Email or Password invalid, please verify</p>
+						</div>
+						
+                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                        &emsp;&emsp;&emsp;
+                        
+                        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-tag"></span>Login</button>
+                 </form>
+                    
+            </div>
+		</div>
+	</div>
+</body>
+</html>
